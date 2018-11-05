@@ -10,8 +10,12 @@ label1.place(x=138, y=50)
 label2=Label(top, text="최고점수")
 label2.place(x=195, y=300)
 
-f=open("scoreboard.txt", 'r')
-label3=Label(top, text=f.read())
+score=open("scoreboard.txt", 'r')
+rank = score.readlines()
+rank.sort()
+rank.reverse()
+
+label3=Label(top, text=rank)
 label3.place(x=210,y=320)
 
 btn1=Button(top,text="게임시작")
