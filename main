@@ -12,9 +12,16 @@ label2.place(x=195, y=300)
 
 score=open("scoreboard.txt", 'r')
 rank = score.readlines()
+for i in range(0, len(rank)):
+  rank[i] = int(rank[i])
 rank.sort()
 rank.reverse()
+for i in range(0, len(rank)):
+  rank[i] = str(rank[i])
+rankText = ' '
+score.close()
 
+for i in
 label3=Label(top, text=rank)
 label3.place(x=210,y=320)
 
