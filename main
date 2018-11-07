@@ -1,30 +1,24 @@
 from tkinter import *
 
-top=Tk()
-top.title("조선대학교 108계단 오르기")
-top.geometry("440x810")
+window=Tk()
+window.title("조선대학교 108계단 오르기")
+window.geometry("440x810")
 
-label1=Label(top, text="조선대학교 108계단 오르기", font="Time 10")
+label1=Label(window, text="조선대학교 108계단 오르기", font="Time 10")
 label1.place(x=138, y=50)
 
-label2=Label(top, text="최고점수")
+label2=Label(window, text="최고점수")
 label2.place(x=195, y=300)
 
 score=open("scoreboard.txt", 'r')
 rank = score.readlines()
-for i in range(0, len(rank)):
-  rank[i] = int(rank[i])
 rank.sort()
 rank.reverse()
-for i in range(0, len(rank)):
-  rank[i] = str(rank[i])
-rankText = ' '
 score.close()
 
-for i in
-label3=Label(top, text=rank)
+label3=Label(window, text=rank)
 label3.place(x=210,y=320)
 
-btn1=Button(top,text="게임시작")
+btn1=Button(window,text="게임시작")
 btn1.place(x=380, y=783)
 
