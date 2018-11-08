@@ -98,22 +98,46 @@ leaflabel = [leaflabel0,leaflabel1,leaflabel2,leaflabel3,leaflabel4]
 scorelabel = Label(frame,text = "Score : " + str(score))
 scorelabel.place( x = 850, y=0)
 
+#checkpos
+def check_pos(i) :
+    global gamestart
+    global score
+    global timer1
+    if temp_leafx[0] == i :
+        gamestart = True
+        score = score+1
+        scorelabel.configure(text = "Score : " + str(score))
+        timer1 = start_time+1
+
+    else :
+        gamestart = False
+        leaflabel[0].place(x=11111, y = 11111)
+        messagebox.showinfo("게임 끝","game over\nyour point is "+ str(score))
+        score = 0
+        scorelabel.configure(text = "Score :" + str(score))
+        timer1 = start_time
+        leaflabel[0].configure(image = leafimg0)
+        
 #key input func
 def Left_input(event) :
     manlabel.place(x = man_posx[0] , y = man_posy)
     leaf_down()
+    check_pos(0)
     
 def Up_input(event) :
     manlabel.place(x = man_posx[1] , y = man_posy)
     leaf_down()
+    check_pos(1)
     
 def Down_input(event) :
     manlabel.place(x = man_posx[2] , y = man_posy)
     leaf_down()
+    check_pos(2)
     
 def Right_input(event) :
     manlabel.place(x = man_posx[3] , y = man_posy)
     leaf_down()
+    check_pos(3)
 
 root.bind('<Left>',Left_input)
 root.bind('<Right>',Right_input)
