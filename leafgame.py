@@ -123,21 +123,26 @@ def Left_input(event) :
     manlabel.place(x = man_posx[0] , y = man_posy)
     leaf_down()
     check_pos(0)
+    gamespeed()
     
 def Up_input(event) :
     manlabel.place(x = man_posx[1] , y = man_posy)
     leaf_down()
     check_pos(1)
+    gamespeed()
     
 def Down_input(event) :
     manlabel.place(x = man_posx[2] , y = man_posy)
     leaf_down()
     check_pos(2)
+    gamespeed()
     
 def Right_input(event) :
     manlabel.place(x = man_posx[3] , y = man_posy)
     leaf_down()
     check_pos(3)
+    gamespeed()
+    
 #time_function
 def time_over() :
     global timer1
