@@ -138,7 +138,7 @@ def Right_input(event) :
     manlabel.place(x = man_posx[3] , y = man_posy)
     leaf_down()
     check_pos(3)
-
+#time_function
 def time_over() :
     global timer1
     global score
@@ -173,7 +173,22 @@ def timerleaf() :
     if timer1 < 1 :
         time_over()
 timerleaf()
+#game speed()
+font= tkinter.font.Font(family="맑은 고딕", size=30, slant="italic")
+Speeduplabel = Label(frame,text = "Speed up!",font = font)
 
+def gamespeed() :
+    global Speed
+    if gamestart == True :
+        if score%10 == 0 :
+            Speed = Speed / 1.1
+            Speeduplabel.place(x= 400, y= 0 )
+        else :
+            Speeduplabel.place(x= 111111, y= 0 )
+    if score == 1 :
+        Speed = Fspeed
+        
+        
 root.bind('<Left>',Left_input)
 root.bind('<Right>',Right_input)
 root.bind('<Up>',Up_input)
