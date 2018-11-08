@@ -5,7 +5,7 @@ import random
 import threading
 
 root = Tk()
-root.title("오르자")
+root.title("108계단")
 root.geometry('950x810')
     
 frame = Frame(root,width = 950, height = 810)
@@ -69,6 +69,18 @@ def place_leaf(leaflabel,ynum):
     leaflabel.place( x = leaf_posx[xnum] , y = leaf_posy[ynum])
 
     temp_leafx.append(xnum)
+
+#leafdown()
+def leaf_down() :
+    global temp_leafx
+    global leaflabel
+    leaflabel[0].configure(image = leafimg)
+    nxnum = random.randint(0, 3)
+    temp_leafx = temp_leafx[1:] + [nxnum]
+    leaflabel = leaflabel[1:] + [leaflabel[0]]
+    leaflabel[4].place(x = leaf_posx[nxnum], y = leaf_posy[4])
+    for i in range(0,4) :
+        leaflabel[i].place(x = leaf_posx[temp_leafx[i]], y = leaf_posy[i])
 
 
 #leaf  만들기
