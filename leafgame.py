@@ -139,6 +139,41 @@ def Right_input(event) :
     leaf_down()
     check_pos(3)
 
+def time_over() :
+    global timer1
+    global score
+    global gamestart
+    timer1 = start_time
+    scorelabel.configure(text = "Score : " + str(score))
+    gamestart = False
+    leaflabel[0].configure(image = leafimg0)
+    messagebox.showinfo("게임 끝","time over\nyour point is "+ str(score))
+    score = 0
+
+def leaf_time_img(i) :
+    if i == 2 :
+        leaflabel[0].configure(image = leafimg2)
+    elif i == 1 :
+        leaflabel[0].configure(image = leafimg1)
+    elif i == 0 :
+        leaflabel[0].configure(image = leafimg0)
+    else :
+        leaflabel[0].configure(image = leafimg)
+    
+def timerleaf() :
+    global timer1
+    global Speed
+    timer1 = timer1 - 1
+    leaf_time_img(timer1)
+    if gamestart == False :
+        timer1 = start_time
+        leaflabel[0].configure(image = leafimg0)     
+    timer = threading.Timer(Speed,timerleaf)
+    timer.start()
+    if timer1 < 1 :
+        time_over()
+timerleaf()
+
 root.bind('<Left>',Left_input)
 root.bind('<Right>',Right_input)
 root.bind('<Up>',Up_input)
