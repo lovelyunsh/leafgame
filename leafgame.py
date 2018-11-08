@@ -151,3 +151,4 @@ leaflabel[0].place( x = leaf_posx[0] , y = leaf_posy[0])
 
 frame.grid()
 
+root.mainloop()
