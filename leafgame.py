@@ -98,6 +98,29 @@ leaflabel = [leaflabel0,leaflabel1,leaflabel2,leaflabel3,leaflabel4]
 scorelabel = Label(frame,text = "Score : " + str(score))
 scorelabel.place( x = 850, y=0)
 
+#key input func
+def Left_input(event) :
+    manlabel.place(x = man_posx[0] , y = man_posy)
+    leaf_down()
+    
+def Up_input(event) :
+    manlabel.place(x = man_posx[1] , y = man_posy)
+    leaf_down()
+    
+def Down_input(event) :
+    manlabel.place(x = man_posx[2] , y = man_posy)
+    leaf_down()
+    
+def Right_input(event) :
+    manlabel.place(x = man_posx[3] , y = man_posy)
+    leaf_down()
+
+root.bind('<Left>',Left_input)
+root.bind('<Right>',Right_input)
+root.bind('<Up>',Up_input)
+root.bind('<Down>',Down_input)
+
+
 for i in range(0,5) :
     place_leaf(leaflabel[i] ,i)
 leaflabel[0].place( x = leaf_posx[0] , y = leaf_posy[0])
