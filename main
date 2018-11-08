@@ -1,4 +1,8 @@
 from tkinter import *
+from tkinter import messagebox
+import tkinter.font
+import random
+import threading
 
 window=Tk()
 window.title("조선대학교 108계단 오르기")
