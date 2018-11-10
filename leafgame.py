@@ -17,6 +17,12 @@ Fspeed = 1
 Speed = Fspeed
 gamestart = False
 
+#점수 갱신
+def update():
+update = open("score.txt", 'w')
+update.write(score)
+update.close()
+
 #man위치좌표
 man_posx = [50, 310, 570,830]
 man_posy = 670
@@ -152,6 +158,7 @@ def time_over() :
     scorelabel.configure(text = "Score : " + str(score))
     gamestart = False
     leaflabel[0].configure(image = leafimg0)
+    update()
     messagebox.showinfo("게임 끝","time over\nyour point is "+ str(score))
     score = 0
 
