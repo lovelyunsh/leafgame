@@ -30,8 +30,8 @@ def getrank():
   rank = [int(i) for i in rank]
   rank.sort()
   rank.reverse()
-  for i in range(0 , 9) :
-    rankstr = rankstr+str(rank[i]) + "\n"
+  for i in rank :
+    rankstr = rankstr+str(i) + "\n"
 
 getrank()   
 scorelabel =Label(window, text=rankstr)
