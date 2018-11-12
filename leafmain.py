@@ -34,7 +34,7 @@ def getrank():
     rankstr = rankstr+str(rank[i]) + "\n"
 
 getrank()   
-scorelabel =Label(window, text=rank)
+scorelabel =Label(window, text=rankstr)
 scorelabel.place(x=210,y=320)
 
 btn1=Button(window,text="게임시작")
