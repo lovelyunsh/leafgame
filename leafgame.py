@@ -4,7 +4,7 @@ import tkinter.font
 import random
 import threading
 
-root = Toplevel()
+root = Tk()
 root.title("108계단")
 root.geometry('950x810')
     
