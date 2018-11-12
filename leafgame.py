@@ -19,9 +19,9 @@ gamestart = False
 
 #점수 갱신
 def update():
-update = open("score.txt", 'w')
-update.write(score)
-update.close()
+    update = open("scoreboard.txt", 'a')
+    update.write(str(score) + '\n')
+    update.close()
 
 #man위치좌표
 man_posx = [50, 310, 570,830]
@@ -118,6 +118,7 @@ def check_pos(i) :
     else :
         gamestart = False
         leaflabel[0].place(x=11111, y = 11111)
+        update()
         messagebox.showinfo("게임 끝","game over\nyour point is "+ str(score))
         score = 0
         scorelabel.configure(text = "Score :" + str(score))
