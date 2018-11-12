@@ -3,9 +3,11 @@ from tkinter import messagebox
 import tkinter.font
 import random
 import threading
+import subprocess
 
 def gamestart():
-  import leafgame
+  subprocess.call("leafgame.py", shell=True)
+    
 window=Tk()
 window.title("조선대학교 108계단 오르기")
 window.geometry("440x810")
