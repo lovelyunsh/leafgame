@@ -4,6 +4,8 @@ import tkinter.font
 import random
 import threading
 
+def gamestart():
+  import leafgame
 window=Tk()
 window.title("조선대학교 108계단 오르기")
 window.geometry("440x810")
@@ -25,5 +27,6 @@ scorelabel =Label(window, text=rank)
 scorelabel.place(x=210,y=320)
 
 btn1=Button(window,text="게임시작")
-btn1.place(x=380, y=783)
+btn1.place(x=380, y=783, command = gamestart)
 
+window.mainloop()
