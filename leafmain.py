@@ -37,7 +37,7 @@ getrank()
 scorelabel =Label(window, text=rankstr)
 scorelabel.place(x=210,y=320)
 
-btn1=Button(window,text="게임시작")
-btn1.place(x=380, y=783, command = gamestart)
+btn1=Button(window,text="게임시작", command = gamestart)
+btn1.place(x=380, y=783)
 
 window.mainloop()
