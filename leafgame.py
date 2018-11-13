@@ -43,7 +43,13 @@ roadlabel2.place(x = 430, y = 0)
 roadlabel3 = Label(frame, image = road)
 roadlabel3.place(x = 690, y = 0)
 
-
+#ask continue
+def askstart():
+    result = messagebox.askyesno("ㅇㅎ","계속할꺼얌?")
+    if result == False :
+        subprocess.call("leafmain.py", shell=True)
+        os._exit(1)
+        
 #Arrow img
 leftimg = PhotoImage(file = "left.png")
 leftlabel = Label(frame, image = leftimg)
@@ -73,7 +79,6 @@ def place_leaf(leaflabel,ynum):
     global temp_leafx
     xnum = random.randint(0, 3)
     leaflabel.place( x = leaf_posx[xnum] , y = leaf_posy[ynum])
-
     temp_leafx.append(xnum)
 
 #leafdown()
@@ -120,6 +125,7 @@ def check_pos(i) :
         leaflabel[0].place(x=11111, y = 11111)
         update()
         messagebox.showinfo("게임 끝","game over\nyour point is "+ str(score))
+        askstart()
         score = 0
         scorelabel.configure(text = "Score :" + str(score))
         timer1 = start_time
@@ -161,6 +167,7 @@ def time_over() :
     leaflabel[0].configure(image = leafimg0)
     update()
     messagebox.showinfo("게임 끝","time over\nyour point is "+ str(score))
+    askstart()
     score = 0
 
 def leaf_time_img(i) :
