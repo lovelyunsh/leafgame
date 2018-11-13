@@ -4,6 +4,8 @@ import tkinter.font
 import random
 import threading
 import subprocess
+from PIL import ImagTk, Image
+
 
 def gamestart():
   subprocess.call("leafgame.py", shell=True)
@@ -13,6 +15,10 @@ def gamestart():
 window=Tk()
 window.title("조선대학교 108계단 오르기")
 window.geometry("340x340")
+
+background_image = ImageTk.PhotoImage(Image.open("background.png"))
+background_label = Label(window, image = background_image)
+background_label.place(x = 0, y = 0)
 
 label1=Label(window, text="조선대학교 108계단 오르기", font="Time 10")
 label1.place(x=88, y=40)
