@@ -12,13 +12,13 @@ def gamestart():
     
 window=Tk()
 window.title("조선대학교 108계단 오르기")
-window.geometry("440x810")
+window.geometry("340x340")
 
 label1=Label(window, text="조선대학교 108계단 오르기", font="Time 10")
-label1.place(x=138, y=50)
+label1.place(x=88, y=40)
 
 label2=Label(window, text="최고점수")
-label2.place(x=195, y=300)
+label2.place(x=145, y=90)
 
 rankstr = ''
 def getrank():
@@ -39,9 +39,9 @@ def getrank():
       
 getrank()   
 scorelabel =Label(window, text=rankstr)
-scorelabel.place(x=210,y=320)
+scorelabel.place(x=155,y=110)
 
 btn1=Button(window,text="게임시작", command = gamestart)
-btn1.place(x=380, y=783)
+btn1.place(x=260, y=300)
 
 window.mainloop()
