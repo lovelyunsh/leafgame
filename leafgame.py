@@ -3,6 +3,7 @@ from tkinter import messagebox
 import tkinter.font
 import random
 import threading
+import os
 
 root = Tk()
 root.title("108계단")
@@ -47,7 +48,6 @@ roadlabel3.place(x = 690, y = 0)
 def askstart():
     result = messagebox.askyesno("ㅇㅎ","계속할꺼얌?")
     if result == False :
-        subprocess.call("leafmain.py", shell=True)
         os._exit(1)
         
 #Arrow img
