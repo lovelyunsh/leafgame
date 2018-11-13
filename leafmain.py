@@ -48,6 +48,6 @@ scorelabel =Label(window, text=rankstr)
 scorelabel.place(x=155,y=110)
 
 btn1=Button(window,text="게임시작", command = gamestart)
-btn1.place(x=260, y=300)
+btn1.place(x=280, y=310)
 
 window.mainloop()
