@@ -17,6 +17,7 @@ start_time = 3
 Fspeed = 1
 Speed = Fspeed
 gamestart = False
+mantimer = 0
 
 #점수 갱신
 def update():
@@ -66,6 +67,12 @@ uplabel.place(x = man_posx[1] , y = 0)
 downimg = PhotoImage(file = "down.png")
 downlabel = Label(frame, image = downimg)
 downlabel.place(x = man_posx[2] , y = 0)
+
+#man img
+ap1 = PhotoImage(file = "ap1.png")
+ap2 = PhotoImage(file = "ap2.png")
+ap3 = PhotoImage(file = "ap3.png")
+ap4 = PhotoImage(file = "ap4.png")
 
 #place man
 man = PhotoImage(file = "man.png")
@@ -179,11 +186,28 @@ def leaf_time_img(i) :
         leaflabel[0].configure(image = leafimg0)
     else :
         leaflabel[0].configure(image = leafimg)
+
+def check_manimg(t) :
+    if t==0 :
+        manlabel.configure(image = ap1)
+    elif t==1 :
+        manlabel.configure(image = ap2)
+    elif t==2 :
+        manlabel.configure(image = ap3)                           
+    else :
+        manlabel.configure(image = ap4)
     
+        
 def timerleaf() :
     global timer1
     global Speed
-    timer1 = timer1 - 1
+    global mantimer
+    timer1 -= 1
+    mantimer += 1
+    if mantimer > 3:
+        mantimer = 0
+    check_manimg(mantimer)
+    
     leaf_time_img(timer1)
     if gamestart == False :
         timer1 = start_time
