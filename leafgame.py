@@ -8,6 +8,7 @@ import os
 root = Tk()
 root.title("108계단")
 root.geometry('950x810')
+root.resizable(width = FALSE, height = FALSE)
     
 frame = Frame(root,width = 950, height = 810)
 
