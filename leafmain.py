@@ -15,6 +15,7 @@ def gamestart():
 window=Tk()
 window.title("조선대학교 108계단 오르기")
 window.geometry("340x340")
+windown.resizable(width = FALSE, height = FALSE)
 
 background_image = ImageTk.PhotoImage(Image.open("background.png"))
 background_label = Label(window, image = background_image)
