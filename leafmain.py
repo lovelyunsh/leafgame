@@ -4,6 +4,14 @@ import tkinter.font
 import random
 import threading
 import subprocess
+import pyglet
+
+def Mic(music1):
+  BGM1 = pyglet.resource.media(music1)
+  BGM1.play()
+  pyglet.app.run()
+  
+Mic('BGM.mp3')
 
 def gamestart():
   subprocess.call("leafgame.py", shell=True)
