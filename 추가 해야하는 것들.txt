@@ -3,3 +3,4 @@
 (leafgame.py)돌이 위에서 떨어져 내려 맞으면 게임 종료
 (leafmain.py)라벨에 색 입히면 좋은 것 같습니다
 (leafmain.py)시간 경과시 게임시작 버튼 반짝거림 효과
+(leafgame.py)캐릭터 그림 깔끔하게 
