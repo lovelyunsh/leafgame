@@ -4,8 +4,6 @@ import tkinter.font
 import random
 import threading
 import subprocess
-from PIL import ImagTk, Image
-
 
 def gamestart():
   subprocess.call("leafgame.py", shell=True)
@@ -21,10 +19,10 @@ background_image = ImageTk.PhotoImage(Image.open("background.png"))
 background_label = Label(window, image = background_image)
 background_label.place(x = 0, y = 0)
 
-label1=Label(window, text="조선대학교 108계단 오르기", font="Time 10")
+label1=Label(window, text="조선대학교 108계단 오르기", bg = 'light blue')
 label1.place(x=88, y=40)
 
-label2=Label(window, text="최고점수")
+label2=Label(window, text="최고점수", bg = 'light gray')
 label2.place(x=145, y=90)
 
 rankstr = ''
@@ -45,7 +43,7 @@ def getrank():
       break
       
 getrank()   
-scorelabel =Label(window, text=rankstr)
+scorelabel =Label(window, text=rankstr, bg = 'light gray')
 scorelabel.place(x=155,y=110)
 
 btn1=Button(window,text="게임시작", command = gamestart)
