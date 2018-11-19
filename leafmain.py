@@ -15,7 +15,7 @@ window.title("조선대학교 108계단 오르기")
 window.geometry("340x340")
 window.resizable(width = FALSE, height = FALSE)
 
-background_image = ImageTk.PhotoImage(Image.open("background.png"))
+background_image = PhotoImage(file = "background.png")
 background_label = Label(window, image = background_image)
 background_label.place(x = 0, y = 0)
 
