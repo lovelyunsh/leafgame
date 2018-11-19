@@ -5,3 +5,5 @@
 (leafmain.py)시간 경과시 게임시작 버튼 반짝거림 효과
 (leafgame.py)캐릭터 그림 깔끔하게 
 (leafmain.py)대기화면에서 BGM이 있으면 좋을 거 같습니다.
+(leafgame.py)게임오버시 사운드
+(leafgame.py)캐릭터 이동 시 효과음
