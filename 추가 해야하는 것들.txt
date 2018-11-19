@@ -1,7 +1,6 @@
 (leafgame.py)사람 이미지 변경 이미지가 유동적으로 보이게 1초마다 뛰는 듯한 모습으로 바꾸기
 (leafgame.py)108층 올라가면 계단이 구름으로 변경되기
 (leafgame.py)돌이 위에서 떨어져 내려 맞으면 게임 종료
-(leafmain.py)라벨에 색 입히면 좋은 것 같습니다
 (leafmain.py)시간 경과시 게임시작 버튼 반짝거림 효과
 (leafgame.py)캐릭터 그림 깔끔하게 
 (leafmain.py)BGM(핀란드 민요)
