@@ -4,6 +4,7 @@ import tkinter.font
 import random
 import threading
 import os
+import pyglet
 
 root = Tk()
 root.title("108계단")
@@ -20,6 +21,23 @@ Speed = Fspeed
 gamestart = False
 mantimer = 0
 
+#BGM 재생
+def Mic(music1):
+    BGM1 = pyglet.resource.media(music1)
+    BGM1.play()
+    pyglet.app.run()
+    return BGM1
+
+if gamestart != False :
+    Mic('BGM.mp3')
+else :
+    Mic.stop()
+#효과음
+def SE(se1):
+    E1 = pyglet.resource.media(se1)
+    E1.play()
+    pyglet.app.run()
+    
 #점수 갱신
 def update():
     update = open("scoreboard.txt", 'a')
@@ -133,6 +151,7 @@ def check_pos(i) :
         leaflabel[0].place(x=11111, y = 11111)
         update()
         messagebox.showinfo("게임 끝","game over\nyour point is "+ str(score))
+        SE('GO.mp3')
         askstart()
         score = 0
         scorelabel.configure(text = "Score :" + str(score))
@@ -145,24 +164,28 @@ def Left_input(event) :
     leaf_down()
     check_pos(0)
     gamespeed()
+    SE('SL.mp3')
     
 def Up_input(event) :
     manlabel.place(x = man_posx[1] , y = man_posy)
     leaf_down()
     check_pos(1)
     gamespeed()
+    SE('SU.mp3')
     
 def Down_input(event) :
     manlabel.place(x = man_posx[2] , y = man_posy)
     leaf_down()
     check_pos(2)
     gamespeed()
+    SE('SD.mp3')
     
 def Right_input(event) :
     manlabel.place(x = man_posx[3] , y = man_posy)
     leaf_down()
     check_pos(3)
     gamespeed()
+    SE('SR.mp3')
     
 #time_function
 def time_over() :
@@ -172,12 +195,13 @@ def time_over() :
     timer1 = start_time
     scorelabel.configure(text = "Score : " + str(score))
     gamestart = False
+    SE('GO.mp3')
     leaflabel[0].configure(image = leafimg0)
     update()
     messagebox.showinfo("게임 끝","time over\nyour point is "+ str(score))
     askstart()
     score = 0
-
+    
 def leaf_time_img(i) :
     if i == 2 :
         leaflabel[0].configure(image = leafimg2)
