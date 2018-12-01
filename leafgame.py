@@ -83,8 +83,7 @@ ap3 = PhotoImage(file = "ap3.png")
 ap4 = PhotoImage(file = "ap4.png")
 
 #place man
-man = PhotoImage(file = "man.png")
-manlabel = Label(frame, image = man)
+manlabel = Label(frame, image = ap1)
 manlabel.place(x = man_posx[0] , y = man_posy)
 
 temp_leafx = []
